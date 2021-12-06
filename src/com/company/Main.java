@@ -32,6 +32,10 @@ public class Main {
                         "2. Display all divisions on the screen;\n" +
                         "3. Display people from a certain division on the screen;\n" +
                         "0. Exit.");
+                while (!scanner.hasNextInt()) {
+                    System.out.println("Insert integer value!");
+                    scanner.next();
+                }
                 choice = scanner.nextInt();
                 switch (choice) {
                     case 1: { // /Users/dosherak/Documents/Course3Sem1/Java/Laborator4/foreign_names.csv
@@ -43,7 +47,7 @@ public class Main {
                         break;
                     }
                     case 2: {
-                        Set<Division> div = csv.division;
+                        Set<Division> div = csv.divisions;
                         for (Division i: div) {
                             System.out.println(i.toString());
                             System.out.println();
